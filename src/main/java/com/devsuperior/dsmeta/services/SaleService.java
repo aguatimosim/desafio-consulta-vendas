@@ -43,7 +43,7 @@ public class SaleService {
 		 	dataInicial = LocalDate.parse(minDate);
 		}
 
-		Page<Sale> result = repository.findAll(pageable);
+		Page<Sale> result = repository.pesquisaVenda(dataInicial, dataFinal, name, pageable);
         return result.map(x -> new SaleDTO(x));
 
 	}
